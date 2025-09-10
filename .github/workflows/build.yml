@@ -1,0 +1,55 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup GCC (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make
+        
+    - name: Setup GCC (macOS)
+      if: runner.os == 'macOS'
+      run: |
+        brew install gcc make
+        
+    - name: Setup MinGW (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        choco install mingw
+        
+    - name: Build with Make
+      run: make
+      
+    - name: Test basic functionality
+      if: runner.os != 'Windows'
+      run: |
+        echo "8" | ./games-pack
+        
+    - name: Test basic functionality (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        echo 8 | .\games-pack.exe
+      shell: cmd
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: games-pack-${{ matrix.os }}
+        path: |
+          games-pack*
+          play.bat
