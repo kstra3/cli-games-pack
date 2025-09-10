@@ -38,18 +38,18 @@ jobs:
     - name: Test basic functionality
       if: runner.os != 'Windows'
       run: |
-        echo "8" | ./games-pack
+        echo "8" | ./cli-games
         
     - name: Test basic functionality (Windows)
       if: runner.os == 'Windows'
       run: |
-        echo 8 | .\games-pack.exe
+        echo 8 | .\cli-games.exe
       shell: cmd
       
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: games-pack-${{ matrix.os }}
+        name: cli-games-${{ matrix.os }}
         path: |
-          games-pack*
+          cli-games*
           play.bat
