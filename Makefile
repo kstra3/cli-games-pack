@@ -2,7 +2,7 @@
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -O2
-TARGET = games-pack
+TARGET = cli-games
 SRCDIR = games
 SOURCES = main.c $(SRCDIR)/rock_paper_scissors.c $(SRCDIR)/guess_number.c $(SRCDIR)/tic_tac_toe.c $(SRCDIR)/hangman.c $(SRCDIR)/word_scramble.c $(SRCDIR)/coin_flip.c $(SRCDIR)/blackjack.c
 OBJECTS = $(SOURCES:.c=.o)

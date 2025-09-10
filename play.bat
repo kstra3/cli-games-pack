@@ -8,7 +8,7 @@ echo ====================================
 echo.
 echo Starting games...
 echo.
-games-pack.exe
+cli-games.exe
 echo.
 echo Thanks for playing!
 pause
