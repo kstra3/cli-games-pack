@@ -63,7 +63,7 @@ A collection of 7 classic command-line games written in C, featuring Rock-Paper-
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/cli-games-pack.git
+git clone https://github.com/kstra3/cli-games-pack.git
 cd cli-games-pack
 ```
 
