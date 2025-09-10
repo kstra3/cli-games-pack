@@ -1,0 +1,113 @@
+# Compiled executables
+games-pack
+games-pack.exe
+cligames.exe
+mygamespack.exe
+testgames.exe
+simpletest.exe
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Temporary files
+*~
+*.swp
+*.swo
+.DS_Store
+*.tmp
+*.temp
+*.log
+
+# Test files
+test_*.txt
+test_input.txt
+test.c
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.sublime-*
+*.code-workspace
+
+# Build directories
+build/
+bin/
+obj/
+out/
+
+# Windows specific
+*.lnk
+
+# Linux specific
+*.AppImage
+
+# macOS specific
+*.app/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Log files
+*.log
+
+# Core dumps
+core
+core.*
+
+# Valgrind output
+vgcore.*
+
+# GDB history
+.gdb_history
+
+# Coverage files
+*.gcov
+*.gcda
+*.gcno
+coverage/
+
+# Static analysis
+cppcheck-results.xml
+*.sarif
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
