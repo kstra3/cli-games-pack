@@ -38,12 +38,12 @@ jobs:
     - name: Test basic functionality
       if: runner.os != 'Windows'
       run: |
-        echo "8" | ./cli-games
+        echo "10" | ./cli-games
         
     - name: Test basic functionality (Windows)
       if: runner.os == 'Windows'
       run: |
-        echo 8 | .\cli-games.exe
+        echo 10 | .\cli-games.exe
       shell: cmd
       
     - name: Upload artifacts

@@ -15,6 +15,8 @@ void play_hangman(void);
 void play_word_scramble(void);
 void play_coin_flip(void);
 void play_blackjack(void);
+void play_bulls_and_cows(void);
+void play_ascii_racing(void);
 
 // Utility functions
 void clear_input_buffer(void);

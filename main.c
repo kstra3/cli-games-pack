@@ -2,21 +2,23 @@
 
 void display_menu(void) {
     printf("\n+==========================================+\n");
-    printf("|           CLI GAMES PACK v1.0            |\n");
+    printf("|           CLI GAMES PACK v1.2            |\n");
     printf("|         Welcome to Fun Gaming!           |\n");
     printf("+==========================================+\n");
     printf("|                                          |\n");
     printf("|  1. Rock, Paper, Scissors                |\n");
     printf("|  2. Guess the Number                     |\n");
-    printf("|  3. Tic Tac Toe (2 Players)             |\n");
+    printf("|  3. Tic Tac Toe (2 Players)              |\n");
     printf("|  4. Hangman                              |\n");
     printf("|  5. Word Scramble                        |\n");
     printf("|  6. Coin Flip                            |\n");
     printf("|  7. Blackjack (21)                       |\n");
-    printf("|  8. Exit                                 |\n");
+    printf("|  8. Bulls & Cows (Mastermind)            |\n");
+    printf("|  9. ASCII Racing Game                    |\n");
+    printf("| 10. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-8): ");
+    printf("\nPlease enter your choice (1-10): ");
 }
 
 void clear_input_buffer(void) {
@@ -44,7 +46,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-8.\n");
+            printf("\nInvalid input! Please enter a number between 1-10.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -96,12 +98,24 @@ int main(void) {
                 break;
                 
             case 8:
+                printf("\n>>> Starting Bulls & Cows (Mastermind)...\n");
+                play_bulls_and_cows();
+                pause_and_continue();
+                break;
+                
+            case 9:
+                printf("\n>>> Starting ASCII Racing Game...\n");
+                play_ascii_racing();
+                pause_and_continue();
+                break;
+                
+            case 10:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-8.\n");
+                printf("\nInvalid choice! Please select a number between 1-10.\n");
                 pause_and_continue();
                 break;
         }
