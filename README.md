@@ -1,6 +1,6 @@
 # 🎮 CLI Games Pack
 
-A collection of 9 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), and ASCII Racing Game!
+A collection of 10 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, and the addictive 2048 puzzle!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -67,6 +67,14 @@ A collection of 9 classic command-line games written in C, featuring Rock-Paper-
 - Collision detection and scoring
 - Cross-platform input handling
 
+### 10. 🧩 2048 Puzzle Game
+- Classic 4x4 grid tile sliding puzzle
+- WASD controls for tile movement
+- Strategic tile merging (2+2=4, 4+4=8, etc.)
+- Goal: Reach the 2048 tile
+- Score tracking with smart random spawning
+- Win/lose condition detection
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -105,13 +113,13 @@ gcc -o games-pack main.c games/*.c -std=c99 -Wall
 ## 🎮 How to Play
 
 1. Run the executable
-2. Choose a game from the menu (1-7)
+2. Choose a game from the menu (1-10)
 3. Follow the on-screen instructions
 4. Have fun!
 
 ```
 +==========================================+
-|           CLI GAMES PACK v1.0            |
+|           CLI GAMES PACK v1.3            |
 |         Welcome to Fun Gaming!           |
 +==========================================+
 |                                          |
@@ -122,7 +130,10 @@ gcc -o games-pack main.c games/*.c -std=c99 -Wall
 |  5. Word Scramble                        |
 |  6. Coin Flip                            |
 |  7. Blackjack                            |
-|  8. Exit                                 |
+|  8. Bulls & Cows (Mastermind)           |
+|  9. ASCII Racing Game                    |
+|  10. 2048 Puzzle Game                    |
+|  11. Exit                                |
 |                                          |
 +==========================================+
 ```
@@ -140,7 +151,10 @@ cli-games-pack/
 │   ├── hangman.c
 │   ├── word_scramble.c
 │   ├── coin_flip.c
-│   └── blackjack.c
+│   ├── blackjack.c
+│   ├── bulls_cows.c
+│   ├── ascii_racing.c
+│   └── 2048.c               # NEW: 2048 puzzle game
 ├── Makefile                 # Build automation
 ├── play.bat                 # Windows launcher script
 ├── README.md                # This file
