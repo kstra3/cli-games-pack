@@ -158,7 +158,7 @@ void play_tic_tac_toe(void) {
     while (1) {
         init_board(&game);
         
-        printf("\n🎮 New Game Started!\n");
+        printf("\n*** New Game Started!\n");
         printf("Player 1: X\n");
         printf("Player 2: O\n");
         
@@ -209,5 +209,5 @@ void play_tic_tac_toe(void) {
         }
     }
     
-    printf("\nThanks for playing Tic Tac Toe! 🎯\n");
+    printf("\nThanks for playing Tic Tac Toe! ***\n");
 }

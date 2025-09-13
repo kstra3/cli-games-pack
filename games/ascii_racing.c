@@ -292,15 +292,15 @@ void display_game_over(void) {
     CLEAR_SCREEN();
     
     printf("\n");
-    printf("+==========================================+\n");
-    printf("|              GAME OVER!                  |\n");
-    printf("+==========================================+\n");
-    printf("|                                          |\n");
+    printf("+===========================================+\n");
+    printf("|              GAME OVER!                   |\n");
+    printf("+===========================================+\n");
+    printf("|                                           |\n");
     printf("| *** Your car crashed into an obstacle! ***|\n");
-    printf("|                                          |\n");
-    printf("| Final Score: %-4d                       |\n", score);
+    printf("|                                           |\n");
+    printf("| Final Score: %-4d                         |\n", score);
     printf("| Speed Level Reached: %-2d                 |\n", (INITIAL_SPEED - game_speed) / SPEED_INCREASE + 1);
-    printf("|                                          |\n");
+    printf("|                                           |\n");
     
     // Performance evaluation
     if (score >= 500) {
@@ -314,22 +314,22 @@ void display_game_over(void) {
     }
     
     printf("|                                          |\n");
-    printf("| Thanks for playing ASCII Racing Game!   |\n");
+    printf("| Thanks for playing ASCII Racing Game!    |\n");
     printf("+==========================================+\n");
 }
 
 // Display game rules and instructions
 void display_racing_rules(void) {
     printf("\n+==========================================+\n");
-    printf("|          ASCII RACING GAME RULES        |\n");
+    printf("|          ASCII RACING GAME RULES          |\n");
     printf("+==========================================+\n");
-    printf("| [CAR] Control your car 'A' on the track |\n");
-    printf("| [X]   Avoid obstacles 'X' falling down  |\n");
-    printf("| [<->] Use A/D keys or arrow keys to move|\n");
+    printf("| [CAR] Control your car 'A' on the track  |\n");
+    printf("| [X]   Avoid obstacles 'X' falling down   |\n");
+    printf("| [<->] Use A/D keys or arrow keys to move |\n");
     printf("| [SPD] Speed increases as you survive     |\n");
     printf("| [PTS] Score points by avoiding obstacles |\n");
-    printf("| [END] Game ends when you hit an obstacle|\n");
-    printf("| [Q]   Press Q anytime to quit           |\n");
+    printf("| [END] Game ends when you hit an obstacle |\n");
+    printf("| [Q]   Press Q anytime to quit            |\n");
     printf("|                                          |\n");
     printf("| Goal: Survive as long as possible and    |\n");
     printf("| achieve the highest score you can!       |\n");

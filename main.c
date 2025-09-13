@@ -2,7 +2,7 @@
 
 void display_menu(void) {
     printf("\n+==========================================+\n");
-    printf("|           CLI GAMES PACK v1.2            |\n");
+    printf("|           CLI GAMES PACK v1.3            |\n");
     printf("|         Welcome to Fun Gaming!           |\n");
     printf("+==========================================+\n");
     printf("|                                          |\n");
@@ -15,10 +15,11 @@ void display_menu(void) {
     printf("|  7. Blackjack (21)                       |\n");
     printf("|  8. Bulls & Cows (Mastermind)            |\n");
     printf("|  9. ASCII Racing Game                    |\n");
-    printf("| 10. Exit                                 |\n");
+    printf("| 10. 2048                                 |\n");
+    printf("| 11. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-10): ");
+    printf("\nPlease enter your choice (1-11): ");
 }
 
 void clear_input_buffer(void) {
@@ -46,7 +47,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-10.\n");
+            printf("\nInvalid input! Please enter a number between 1-11.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -110,12 +111,18 @@ int main(void) {
                 break;
                 
             case 10:
+                printf("\n>>> Starting 2048...\n");
+                play_2048();
+                pause_and_continue();
+                break;
+                
+            case 11:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-10.\n");
+                printf("\nInvalid choice! Please select a number between 1-11.\n");
                 pause_and_continue();
                 break;
         }
