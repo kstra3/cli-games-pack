@@ -18,6 +18,7 @@ void play_blackjack(void);
 void play_bulls_and_cows(void);
 void play_ascii_racing(void);
 void play_2048(void);
+void play_snake(void);
 
 // Utility functions
 void clear_input_buffer(void);
