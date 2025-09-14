@@ -19,6 +19,8 @@ void play_bulls_and_cows(void);
 void play_ascii_racing(void);
 void play_2048(void);
 void play_snake(void);
+void play_slot_machine(void);
+void play_minesweeper(void);
 
 // Utility functions
 void clear_input_buffer(void);
