@@ -180,17 +180,6 @@ cli-games-pack/
 - **Extensible:** Easy to add new games
 - **User-Friendly:** Clear menus and instructions
 
-## 📊 Game Statistics
-
-| Game | Lines of Code | Difficulty | Fun Factor |
-|------|---------------|------------|------------|
-| Rock-Paper-Scissors | ~200 | ⭐⭐ | ⭐⭐⭐⭐ |
-| Guess the Number | ~250 | ⭐⭐ | ⭐⭐⭐ |
-| Tic Tac Toe | ~300 | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Hangman | ~350 | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Word Scramble | ~400 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Coin Flip | ~250 | ⭐ | ⭐⭐⭐ |
-| Blackjack | ~450 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 
 ## 🤝 Contributing
 
@@ -210,14 +199,6 @@ Contributions are welcome! Here are some ways you can contribute:
 4. Test thoroughly
 5. Submit a pull request
 
-### Code Style Guidelines
-
-- Use consistent indentation (4 spaces)
-- Add comments for complex logic
-- Follow C99 standard
-- Keep functions focused and small
-- Use descriptive variable names
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -232,9 +213,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/cli-games-pack/issues) page
-2. Create a new issue if needed
-3. Provide detailed information about your problem
+ Create a new issue if needed
+ Provide detailed information about your problem
 
 ## 🌟 Show Your Support
 
