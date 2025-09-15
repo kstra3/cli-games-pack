@@ -1,6 +1,8 @@
 # 🎮 CLI Games Pack
 
-A collection of 10 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, and the addictive 2048 puzzle!
+A collection of 16 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, and the addictive 2048 puzzle!
+
+I use ASCII and not emojis because I do not wish to someone 's the programm not running smoothly sawing them some weird characters!!!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
