@@ -234,6 +234,7 @@ cli-games-pack/
 - **Extensible:** Easy to add new games
 - **User-Friendly:** Clear menus and instructions
 
+<<<<<<< HEAD
 ## 🚀 What's New in v1.8
 
 - **🏎️ F1 Reaction Start:** Professional Formula 1 starting lights simulation with 6 game modes
@@ -262,6 +263,8 @@ cli-games-pack/
 | Minesweeper | ~600 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 | F1 Reaction Start | ~800 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 | Space Invaders | ~1200 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+=======
+>>>>>>> 62e8a1792bd92fa0a8e4569598ee9d00eafccf98
 
 ## 🤝 Contributing
 
@@ -281,14 +284,6 @@ Contributions are welcome! Here are some ways you can contribute:
 4. Test thoroughly
 5. Submit a pull request
 
-### Code Style Guidelines
-
-- Use consistent indentation (4 spaces)
-- Add comments for complex logic
-- Follow C99 standard
-- Keep functions focused and small
-- Use descriptive variable names
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -303,9 +298,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/cli-games-pack/issues) page
-2. Create a new issue if needed
-3. Provide detailed information about your problem
+ Create a new issue if needed
+ Provide detailed information about your problem
 
 ## 🌟 Show Your Support
 
