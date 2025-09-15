@@ -30,33 +30,25 @@ jobs:
         
     - name: Setup MinGW (Windows)
       if: runner.os == 'Windows'
-      uses: msys2/setup-msys2@v2
-      with:
-        msystem: MINGW64
-        install: mingw-w64-x86_64-gcc mingw-w64-x86_64-make
+      run: |
+        # Use chocolatey to install mingw
+        choco install mingw --no-progress --yes
         
     - name: Build with Make (Linux/macOS)
       if: runner.os != 'Windows'
       run: make
       
-    - name: Build with Make (Windows)
+    - name: Build manually (Windows)
       if: runner.os == 'Windows'
-      shell: msys2 {0}
-      run: make
-      
-    - name: Test basic functionality (Linux/macOS)
-      if: runner.os != 'Windows'
       run: |
-        # Test that the executable runs and exits gracefully
-        echo "16" | timeout 10s ./cli-games || true
+        gcc -Wall -Wextra -std=c99 -O2 -o cli-games.exe main.c games/rock_paper_scissors.c games/guess_number.c games/tic_tac_toe.c games/hangman.c games/word_scramble.c games/coin_flip.c games/blackjack.c games/bulls_and_cows.c games/ascii_racing.c games/2048.c games/snake.c games/slot_machine.c games/minesweeper.c games/f1_reaction.c games/space_invaders.c
+      shell: cmd
+      
+    - name: Verify build (All platforms)
+      run: |
+        ls -la cli-games* || dir cli-games*
+      shell: bash
         
-    - name: Test basic functionality (Windows)
-      if: runner.os == 'Windows'
-      shell: msys2 {0}
-      run: |
-        # Test that the executable runs and exits gracefully
-        echo "16" | timeout 10s ./cli-games.exe || true
-      
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
