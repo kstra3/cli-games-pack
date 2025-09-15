@@ -23,6 +23,7 @@ void play_slot_machine(void);
 void play_minesweeper(void);
 void play_f1_reaction(void);
 void play_space_invaders(void);
+void play_simon_says(void);
 
 // Utility functions
 void clear_input_buffer(void);

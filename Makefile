@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -O2
 TARGET = cli-games
 SRCDIR = games
-SOURCES = main.c $(SRCDIR)/rock_paper_scissors.c $(SRCDIR)/guess_number.c $(SRCDIR)/tic_tac_toe.c $(SRCDIR)/hangman.c $(SRCDIR)/word_scramble.c $(SRCDIR)/coin_flip.c $(SRCDIR)/blackjack.c $(SRCDIR)/bulls_and_cows.c $(SRCDIR)/ascii_racing.c $(SRCDIR)/2048.c $(SRCDIR)/snake.c $(SRCDIR)/slot_machine.c $(SRCDIR)/minesweeper.c $(SRCDIR)/f1_reaction.c $(SRCDIR)/space_invaders.c
+SOURCES = main.c $(SRCDIR)/rock_paper_scissors.c $(SRCDIR)/guess_number.c $(SRCDIR)/tic_tac_toe.c $(SRCDIR)/hangman.c $(SRCDIR)/word_scramble.c $(SRCDIR)/coin_flip.c $(SRCDIR)/blackjack.c $(SRCDIR)/bulls_and_cows.c $(SRCDIR)/ascii_racing.c $(SRCDIR)/2048.c $(SRCDIR)/snake.c $(SRCDIR)/slot_machine.c $(SRCDIR)/minesweeper.c $(SRCDIR)/f1_reaction.c $(SRCDIR)/space_invaders.c $(SRCDIR)/simon_says.c
 OBJECTS = $(SOURCES:.c=.o)
 
 # Default target

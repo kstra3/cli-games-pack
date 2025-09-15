@@ -1,6 +1,6 @@
 # 🎮 CLI Games Pack v1.8
 
-A comprehensive collection of 15 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, and the legendary Space Invaders!
+A comprehensive collection of 16 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, and the brain-training Simon Says!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -116,6 +116,14 @@ A comprehensive collection of 15 classic command-line games written in C, featur
 - Visual explosion effects and animated bullets
 - Statistical tracking and high score system
 
+### 16. 🧠 Simon Says (Memory Training)
+- Enhanced memory game with 6 different modes
+- Classic, Speed, Memory Master, Color Blind Friendly, Reverse, and Number Sequence challenges
+- 5 difficulty levels from Beginner to Impossible
+- 20+ achievements system with cognitive rewards
+- Statistics tracking and memory span assessment
+- Educational memory training tips and techniques
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -179,7 +187,8 @@ gcc -o cli-games main.c games/*.c -std=c99 -Wall
 | 13. Minesweeper                          |
 | 14. F1 Reaction Start                    |
 | 15. Space Invaders                       |
-| 16. Exit                                 |
+| 16. Simon Says (Memory)                  |
+| 17. Exit                                 |
 |                                          |
 +==========================================+
 ```

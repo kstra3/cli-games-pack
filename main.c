@@ -21,10 +21,11 @@ void display_menu(void) {
     printf("| 13. Minesweeper                          |\n");
     printf("| 14. F1 Reaction Start                    |\n");
     printf("| 15. Space Invaders                       |\n");
-    printf("| 16. Exit                                 |\n");
+    printf("| 16. Simon Says (Memory)                  |\n");
+    printf("| 17. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-16): ");
+    printf("\nPlease enter your choice (1-17): ");
 }
 
 void clear_input_buffer(void) {
@@ -52,7 +53,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-16.\n");
+            printf("\nInvalid input! Please enter a number between 1-17.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -152,12 +153,18 @@ int main(void) {
                 break;
                 
             case 16:
+                printf("\n>>> Starting Simon Says (Memory)...\n");
+                play_simon_says();
+                pause_and_continue();
+                break;
+                
+            case 17:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-15.\n");
+                printf("\nInvalid choice! Please select a number between 1-17.\n");
                 pause_and_continue();
                 break;
         }
