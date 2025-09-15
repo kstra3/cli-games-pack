@@ -244,28 +244,6 @@ cli-games-pack/
 - **📊 Statistics:** Advanced tracking for all games with personal bests
 - **🎨 Visual Improvements:** Better ASCII art and smoother animations
 
-## 📊 Game Statistics
-
-| Game | Lines of Code | Difficulty | Fun Factor |
-|------|---------------|------------|------------|
-| Rock-Paper-Scissors | ~200 | ⭐⭐ | ⭐⭐⭐⭐ |
-| Guess the Number | ~250 | ⭐⭐ | ⭐⭐⭐ |
-| Tic Tac Toe | ~300 | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Hangman | ~350 | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Word Scramble | ~400 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Coin Flip | ~250 | ⭐ | ⭐⭐⭐ |
-| Blackjack | ~450 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Bulls & Cows | ~300 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| ASCII Racing | ~500 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| 2048 | ~400 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Snake | ~350 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Slot Machine | ~300 | ⭐⭐ | ⭐⭐⭐⭐ |
-| Minesweeper | ~600 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| F1 Reaction Start | ~800 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Space Invaders | ~1200 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-=======
->>>>>>> 62e8a1792bd92fa0a8e4569598ee9d00eafccf98
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here are some ways you can contribute:
