@@ -1,10 +1,11 @@
-# 🎮 CLI Games Pack
+# 🎮 CLI Games Pack v1.8
 
-A collection of 10 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, and the addictive 2048 puzzle!
+A comprehensive collection of 15 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, and the legendary Space Invaders!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
+![Build Status](https://github.com/kstra3/cli-games-pack/workflows/Build%20and%20Test/badge.svg)
 
 ## 🎯 Games Included
 
@@ -75,6 +76,46 @@ A collection of 10 classic command-line games written in C, featuring Rock-Paper
 - Score tracking with smart random spawning
 - Win/lose condition detection
 
+### 11. 🐍 Snake Game
+- Classic snake gameplay with growing tail
+- Arrow key controls for movement
+- Food collection and score tracking
+- Wall and self-collision detection
+- Increasing difficulty as snake grows
+- Retro ASCII graphics
+
+### 12. 🎰 Slot Machine
+- 3-reel slot machine with betting system
+- Multiple winning combinations (777, BAR, etc.)
+- Starting bankroll with win/loss tracking
+- Animated reel spinning effects
+- Realistic payout ratios
+- Jackpot and bonus features
+
+### 13. 💣 Minesweeper
+- Classic grid-based mine detection game
+- Multiple difficulty levels (Beginner to Expert)
+- Flag system for marking suspected mines
+- Recursive reveal for empty spaces
+- Win/loss detection with timer
+- Traditional ASCII field display
+
+### 14. 🏎️ F1 Reaction Start
+- Professional Formula 1 starting lights simulation
+- 6 game modes: Practice, Championship, Time Trial, Pressure Test, Endurance, and Career
+- Authentic F1 timing system with millisecond precision
+- Sound effects and immersive race atmosphere
+- Statistics tracking and personal bests
+- Realistic jump start detection
+
+### 15. 👾 Space Invaders 1978
+- Authentic retro arcade Space Invaders experience
+- 6 game modes: Classic, Speed Run, Fortress Defense, Marksman Challenge, Endless Wave, and Custom Setup
+- Enhanced gameplay with smooth 30 FPS animation
+- Dynamic enemy projectiles with varied patterns (zigzag, fast shots)
+- Visual explosion effects and animated bullets
+- Statistical tracking and high score system
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -97,8 +138,8 @@ make
 
 3. **Run the games:**
 ```bash
-./games-pack        # Linux/macOS
-games-pack.exe      # Windows
+./cli-games        # Linux/macOS
+cli-games.exe      # Windows
 ```
 
 Or on Windows, simply double-click `play.bat`
@@ -107,33 +148,38 @@ Or on Windows, simply double-click `play.bat`
 If you don't have Make installed:
 
 ```bash
-gcc -o games-pack main.c games/*.c -std=c99 -Wall
+gcc -o cli-games main.c games/*.c -std=c99 -Wall
 ```
 
 ## 🎮 How to Play
 
 1. Run the executable
-2. Choose a game from the menu (1-10)
+2. Choose a game from the menu (1-16)
 3. Follow the on-screen instructions
 4. Have fun!
 
 ```
 +==========================================+
-|           CLI GAMES PACK v1.3            |
+|           CLI GAMES PACK v1.8            |
 |         Welcome to Fun Gaming!           |
 +==========================================+
 |                                          |
 |  1. Rock, Paper, Scissors                |
 |  2. Guess the Number                     |
-|  3. Tic Tac Toe (2 Players)             |
+|  3. Tic Tac Toe (2 Players)              |
 |  4. Hangman                              |
 |  5. Word Scramble                        |
 |  6. Coin Flip                            |
-|  7. Blackjack                            |
-|  8. Bulls & Cows (Mastermind)           |
+|  7. Blackjack (21)                       |
+|  8. Bulls & Cows (Mastermind)            |
 |  9. ASCII Racing Game                    |
-|  10. 2048 Puzzle Game                    |
-|  11. Exit                                |
+| 10. 2048                                 |
+| 11. Snake                                |
+| 12. Slot Machine                         |
+| 13. Minesweeper                          |
+| 14. F1 Reaction Start                    |
+| 15. Space Invaders                       |
+| 16. Exit                                 |
 |                                          |
 +==========================================+
 ```
@@ -152,9 +198,17 @@ cli-games-pack/
 │   ├── word_scramble.c
 │   ├── coin_flip.c
 │   ├── blackjack.c
-│   ├── bulls_cows.c
+│   ├── bulls_and_cows.c
 │   ├── ascii_racing.c
-│   └── 2048.c               # NEW: 2048 puzzle game
+│   ├── 2048.c               # 2048 puzzle game
+│   ├── snake.c              # Snake game
+│   ├── slot_machine.c       # Slot machine
+│   ├── minesweeper.c        # Minesweeper
+│   ├── f1_reaction.c        # F1 Reaction Start
+│   └── space_invaders.c     # Space Invaders 1978
+├── .github/
+│   └── workflows/
+│       └── build.yml        # CI/CD pipeline
 ├── Makefile                 # Build automation
 ├── play.bat                 # Windows launcher script
 ├── README.md                # This file
@@ -180,6 +234,15 @@ cli-games-pack/
 - **Extensible:** Easy to add new games
 - **User-Friendly:** Clear menus and instructions
 
+## 🚀 What's New in v1.8
+
+- **🏎️ F1 Reaction Start:** Professional Formula 1 starting lights simulation with 6 game modes
+- **👾 Space Invaders 1978:** Complete retro arcade experience with 6 game modes and enhanced effects
+- **🎮 Enhanced Gameplay:** Improved animations, sound effects, and visual feedback
+- **🔧 Bug Fixes:** Improved menu navigation and cross-platform compatibility
+- **📊 Statistics:** Advanced tracking for all games with personal bests
+- **🎨 Visual Improvements:** Better ASCII art and smoother animations
+
 ## 📊 Game Statistics
 
 | Game | Lines of Code | Difficulty | Fun Factor |
@@ -191,6 +254,14 @@ cli-games-pack/
 | Word Scramble | ~400 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 | Coin Flip | ~250 | ⭐ | ⭐⭐⭐ |
 | Blackjack | ~450 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Bulls & Cows | ~300 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| ASCII Racing | ~500 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| 2048 | ~400 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Snake | ~350 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Slot Machine | ~300 | ⭐⭐ | ⭐⭐⭐⭐ |
+| Minesweeper | ~600 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| F1 Reaction Start | ~800 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Space Invaders | ~1200 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 
 ## 🤝 Contributing
 

@@ -2,7 +2,7 @@
 
 void display_menu(void) {
     printf("\n+==========================================+\n");
-    printf("|           CLI GAMES PACK v1.6            |\n");
+    printf("|           CLI GAMES PACK v1.8            |\n");
     printf("|         Welcome to Fun Gaming!           |\n");
     printf("+==========================================+\n");
     printf("|                                          |\n");
@@ -19,10 +19,12 @@ void display_menu(void) {
     printf("| 11. Snake                                |\n");
     printf("| 12. Slot Machine                         |\n");
     printf("| 13. Minesweeper                          |\n");
-    printf("| 14. Exit                                 |\n");
+    printf("| 14. F1 Reaction Start                    |\n");
+    printf("| 15. Space Invaders                       |\n");
+    printf("| 16. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-14): ");
+    printf("\nPlease enter your choice (1-16): ");
 }
 
 void clear_input_buffer(void) {
@@ -50,7 +52,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-14.\n");
+            printf("\nInvalid input! Please enter a number between 1-16.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -138,12 +140,24 @@ int main(void) {
                 break;
                 
             case 14:
+                printf("\n>>> Starting F1 Reaction Start...\n");
+                play_f1_reaction();
+                pause_and_continue();
+                break;
+                
+            case 15:
+                printf("\n>>> Starting Space Invaders...\n");
+                play_space_invaders();
+                pause_and_continue();
+                break;
+                
+            case 16:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-14.\n");
+                printf("\nInvalid choice! Please select a number between 1-15.\n");
                 pause_and_continue();
                 break;
         }

@@ -453,22 +453,22 @@ void display_snake_game_over(void) {
     
     printf("|                                           |\n");
     printf("| Final Score: %-4d                         |\n", score);
-    printf("| Snake Length: %-3d                        |\n", snake.length);
-    printf("| Food Eaten: %-3d                          |\n", food_eaten);
-    printf("| Speed Level: %-2d                         |\n", speed_level);
+    printf("| Snake Length: %-3d                         |\n", snake.length);
+    printf("| Food Eaten: %-3d                           |\n", food_eaten);
+    printf("| Speed Level: %-2d                           |\n", speed_level);
     printf("|                                           |\n");
     
     // Performance evaluation
     if (score >= 1000) {
-        printf("| Performance: LEGENDARY! [CROWN]          |\n");
+        printf("| Performance: LEGENDARY! [CROWN]           |\n");
     } else if (score >= 500) {
-        printf("| Performance: EXCELLENT! [TROPHY]         |\n");
+        printf("| Performance: EXCELLENT! [TROPHY]          |\n");
     } else if (score >= 300) {
-        printf("| Performance: GREAT! [SILVER]             |\n");
+        printf("| Performance: GREAT! [SILVER]              |\n");
     } else if (score >= 150) {
-        printf("| Performance: GOOD! [BRONZE]              |\n");
+        printf("| Performance: GOOD! [BRONZE]               |\n");
     } else {
-        printf("| Performance: Keep practicing! [TRAIN]    |\n");
+        printf("| Performance: Keep practicing! [TRAIN]     |\n");
     }
     
     printf("|                                           |\n");
@@ -480,7 +480,7 @@ void display_snake_game_over(void) {
     }
     
     printf("| Thanks for playing Snake Game!            |\n");
-    printf("+==========================================+\n");
+    printf("+===========================================+\n");
 }
 
 // Display game rules and instructions
