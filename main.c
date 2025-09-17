@@ -55,7 +55,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-18.\n");
+            printf("\nInvalid input! Please enter a number between 1-19.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
