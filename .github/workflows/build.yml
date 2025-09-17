@@ -32,8 +32,9 @@ jobs:
     - name: Setup MinGW (Windows)
       if: runner.os == 'Windows'
       run: |
-        # Use chocolatey to install mingw
-        choco install mingw --no-progress --yes
+        # GitHub Actions Windows runners already have MinGW installed
+        gcc --version
+        echo "✅ GCC is available on Windows runner"
         
     - name: Build with Make (Linux/macOS)
       if: runner.os != 'Windows'
@@ -45,20 +46,31 @@ jobs:
         gcc -Wall -Wextra -std=c99 -O2 -o cli-games.exe main.c games/rock_paper_scissors.c games/guess_number.c games/tic_tac_toe.c games/hangman.c games/word_scramble.c games/coin_flip.c games/blackjack.c games/bulls_and_cows.c games/ascii_racing.c games/2048.c games/snake.c games/slot_machine.c games/minesweeper.c games/f1_reaction.c games/space_invaders.c games/simon_says.c games/flappy_bird.c games/dino_runner.c
       shell: cmd
       
-    - name: Verify build (All platforms)
+    - name: Verify build (Linux/macOS)
+      if: runner.os != 'Windows'
       run: |
-        if [ "$RUNNER_OS" = "Windows" ]; then
-          ls -la cli-games.exe 2>/dev/null || dir cli-games.exe
-        else
-          ls -la cli-games 2>/dev/null || echo "Build output not found"
-        fi
-      shell: bash
+        ls -la cli-games
+        echo "✅ Build verification successful on ${{ runner.os }}"
         
-    - name: Upload artifacts
+    - name: Verify build (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        dir cli-games.exe
+        echo "✅ Build verification successful on Windows"
+      shell: cmd
+        
+    - name: Upload artifacts (Linux/macOS)
+      if: runner.os != 'Windows'
+      uses: actions/upload-artifact@v4
+      with:
+        name: cli-games-${{ matrix.os }}
+        path: cli-games
+        
+    - name: Upload artifacts (Windows)
+      if: runner.os == 'Windows'
       uses: actions/upload-artifact@v4
       with:
         name: cli-games-${{ matrix.os }}
         path: |
-          cli-games
           cli-games.exe
           play.bat
