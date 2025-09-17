@@ -22,10 +22,12 @@ void display_menu(void) {
     printf("| 14. F1 Reaction Start                    |\n");
     printf("| 15. Space Invaders                       |\n");
     printf("| 16. Simon Says (Memory)                  |\n");
-    printf("| 17. Exit                                 |\n");
+    printf("| 17. Flappy Bird                          |\n");
+    printf("| 18. Chrome Dino Runner                   |\n");
+    printf("| 19. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-17): ");
+    printf("\nPlease enter your choice (1-19): ");
 }
 
 void clear_input_buffer(void) {
@@ -53,7 +55,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-17.\n");
+            printf("\nInvalid input! Please enter a number between 1-18.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -159,12 +161,24 @@ int main(void) {
                 break;
                 
             case 17:
+                printf("\n>>> Starting Flappy Bird...\n");
+                play_flappy_bird();
+                pause_and_continue();
+                break;
+                
+            case 18:
+                printf("\n>>> Starting Chrome Dino Runner...\n");
+                play_dino_runner();
+                pause_and_continue();
+                break;
+                
+            case 19:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-17.\n");
+                printf("\nInvalid choice! Please select a number between 1-19.\n");
                 pause_and_continue();
                 break;
         }

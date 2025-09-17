@@ -1,6 +1,6 @@
 # 🎮 CLI Games Pack v1.8
 
-A comprehensive collection of 16 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, and the brain-training Simon Says!
+A comprehensive collection of 18 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, Simon Says, Flappy Bird, and the iconic Chrome Dino Runner!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -123,6 +123,27 @@ A comprehensive collection of 16 classic command-line games written in C, featur
 - 20+ achievements system with cognitive rewards
 - Statistics tracking and memory span assessment
 - Educational memory training tips and techniques
+
+### 17. 🐦 Flappy Bird (Reflex Challenge)
+- ASCII recreation of the classic mobile game
+- 5 game modes: Classic, Speedrun, Endless, Trick, and Custom
+- Realistic physics with gravity and momentum
+- Dynamic pipe generation with varying gaps
+- 15+ achievements system with skill-based rewards
+- Statistics tracking and personal best records
+- Smooth ASCII animations and collision detection
+
+### 18. 🦕 Chrome Dino Runner (Endless Running)
+- Enhanced recreation of the Chrome offline dinosaur game
+- 5 game modes: Classic, Sprint, Marathon, Obstacle Course, and Custom
+- Realistic physics with jumping and ducking mechanics
+- Multiple obstacle types: cacti, rocks, flying birds
+- Day/night cycle with visual atmosphere changes
+- Progressive difficulty with increasing speed
+- 15+ achievements system with milestone rewards
+- Statistics tracking and high score persistence
+- Smooth ASCII animations with multiple sprite frames
+- Perfect recreation of the beloved "no internet" game
 
 ## 🚀 Quick Start
 

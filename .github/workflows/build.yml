@@ -41,7 +41,7 @@ jobs:
     - name: Build manually (Windows)
       if: runner.os == 'Windows'
       run: |
-        gcc -Wall -Wextra -std=c99 -O2 -o cli-games.exe main.c games/rock_paper_scissors.c games/guess_number.c games/tic_tac_toe.c games/hangman.c games/word_scramble.c games/coin_flip.c games/blackjack.c games/bulls_and_cows.c games/ascii_racing.c games/2048.c games/snake.c games/slot_machine.c games/minesweeper.c games/f1_reaction.c games/space_invaders.c games/simon_says.c
+        gcc -Wall -Wextra -std=c99 -O2 -o cli-games.exe main.c games/rock_paper_scissors.c games/guess_number.c games/tic_tac_toe.c games/hangman.c games/word_scramble.c games/coin_flip.c games/blackjack.c games/bulls_and_cows.c games/ascii_racing.c games/2048.c games/snake.c games/slot_machine.c games/minesweeper.c games/f1_reaction.c games/space_invaders.c games/simon_says.c games/flappy_bird.c games/dino_runner.c
       shell: cmd
       
     - name: Verify build (All platforms)
