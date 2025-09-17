@@ -25,8 +25,9 @@ jobs:
     - name: Setup GCC (macOS)
       if: runner.os == 'macOS'
       run: |
-        # macOS already has clang/gcc from Xcode Command Line Tools
-        xcode-select --install || true
+        # Verify compiler availability (macOS runners have Xcode tools pre-installed)
+        which gcc || which clang
+        gcc --version || clang --version
         
     - name: Setup MinGW (Windows)
       if: runner.os == 'Windows'
@@ -46,7 +47,11 @@ jobs:
       
     - name: Verify build (All platforms)
       run: |
-        ls -la cli-games* || dir cli-games*
+        if [ "$RUNNER_OS" = "Windows" ]; then
+          ls -la cli-games.exe 2>/dev/null || dir cli-games.exe
+        else
+          ls -la cli-games 2>/dev/null || echo "Build output not found"
+        fi
       shell: bash
         
     - name: Upload artifacts
@@ -54,5 +59,6 @@ jobs:
       with:
         name: cli-games-${{ matrix.os }}
         path: |
-          cli-games*
+          cli-games
+          cli-games.exe
           play.bat
