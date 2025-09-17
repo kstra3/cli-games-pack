@@ -9,6 +9,9 @@ testgames.exe
 simpletest.exe
 *.exe
 
+# Game data files
+*.dat
+
 # Object files
 *.o
 *.obj
