@@ -355,7 +355,7 @@ void play_blackjack(void) {
             determine_blackjack_winner(&game);
         } else {
             // Player's turn
-            int doubled_down = 0;
+            int doubled_down = 0; // Reserved for future double down feature
             
             while (!game.player_hand.is_bust) {
                 int action = get_player_action(&game.player_hand);
@@ -391,6 +391,9 @@ void play_blackjack(void) {
                     printf("Invalid action! Please try again.\n");
                 }
             }
+            
+            // Suppress unused variable warning
+            (void)doubled_down;
             
             // Dealer's turn (if player didn't bust)
             if (!game.player_hand.is_bust) {
