@@ -2,7 +2,7 @@
 
 void display_menu(void) {
     printf("\n+==========================================+\n");
-    printf("|           CLI GAMES PACK v1.8            |\n");
+    printf("|           CLI GAMES PACK v1.9            |\n");
     printf("|         Welcome to Fun Gaming!           |\n");
     printf("+==========================================+\n");
     printf("|                                          |\n");
@@ -24,10 +24,11 @@ void display_menu(void) {
     printf("| 16. Simon Says (Memory)                  |\n");
     printf("| 17. Flappy Bird                          |\n");
     printf("| 18. Chrome Dino Runner                   |\n");
-    printf("| 19. Exit                                 |\n");
+    printf("| 19. Russian Roulette                     |\n");
+    printf("| 20. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-19): ");
+    printf("\nPlease enter your choice (1-20): ");
 }
 
 void clear_input_buffer(void) {
@@ -55,7 +56,7 @@ int main(void) {
         display_menu();
         
         if (scanf("%d", &choice) != 1) {
-            printf("\nInvalid input! Please enter a number between 1-19.\n");
+            printf("\nInvalid input! Please enter a number between 1-20.\n");
             clear_input_buffer();
             pause_and_continue();
             continue;
@@ -173,12 +174,18 @@ int main(void) {
                 break;
                 
             case 19:
+                printf("\n>>> Starting Russian Roulette...\n");
+                play_russian_roulette();
+                pause_and_continue();
+                break;
+                
+            case 20:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-19.\n");
+                printf("\nInvalid choice! Please select a number between 1-20.\n");
                 pause_and_continue();
                 break;
         }

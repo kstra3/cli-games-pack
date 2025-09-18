@@ -26,6 +26,7 @@ void play_space_invaders(void);
 void play_simon_says(void);
 void play_flappy_bird(void);
 void play_dino_runner(void);
+void play_russian_roulette(void);
 
 // Utility functions
 void clear_input_buffer(void);
