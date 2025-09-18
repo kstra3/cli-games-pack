@@ -1,6 +1,6 @@
-# 🎮 CLI Games Pack v1.8
+# 🎮 CLI Games Pack v1.9
 
-A comprehensive collection of 18 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, Simon Says, Flappy Bird, and the iconic Chrome Dino Runner!
+A comprehensive collection of 19 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, Simon Says, Flappy Bird, Chrome Dino Runner, and the thrilling Russian Roulette!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -145,6 +145,18 @@ A comprehensive collection of 18 classic command-line games written in C, featur
 - Smooth ASCII animations with multiple sprite frames
 - Perfect recreation of the beloved "no internet" game
 
+### 19. 🎲 Russian Roulette (Simulation Game)
+- Thrilling simulation of the classic high-stakes game
+- 2 game modes: Single Player Survival and Multiplayer (2-6 players)
+- Realistic revolver mechanics with 6-chamber cylinder
+- Customizable bullet count (1-5 for single player, 1 to player_count-1 for multiplayer)
+- Dramatic ASCII art revolver display with spinning animations
+- Player statistics tracking (shots survived, performance ratings)
+- Multiplayer tournament mode with last-one-standing gameplay
+- Safety warnings and educational disclaimers included
+- Suspenseful sound effects and timing animations
+- Cross-platform compatible ASCII graphics
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -189,7 +201,7 @@ gcc -o cli-games main.c games/*.c -std=c99 -Wall
 
 ```
 +==========================================+
-|           CLI GAMES PACK v1.8            |
+|           CLI GAMES PACK v1.9            |
 |         Welcome to Fun Gaming!           |
 +==========================================+
 |                                          |
@@ -209,7 +221,10 @@ gcc -o cli-games main.c games/*.c -std=c99 -Wall
 | 14. F1 Reaction Start                    |
 | 15. Space Invaders                       |
 | 16. Simon Says (Memory)                  |
-| 17. Exit                                 |
+| 17. Flappy Bird                          |
+| 18. Chrome Dino Runner                   |
+| 19. Russian Roulette                     |
+| 20. Exit                                 |
 |                                          |
 +==========================================+
 ```
@@ -235,7 +250,11 @@ cli-games-pack/
 │   ├── slot_machine.c       # Slot machine
 │   ├── minesweeper.c        # Minesweeper
 │   ├── f1_reaction.c        # F1 Reaction Start
-│   └── space_invaders.c     # Space Invaders 1978
+│   ├── space_invaders.c     # Space Invaders 1978
+│   ├── simon_says.c         # Simon Says memory game
+│   ├── flappy_bird.c        # Flappy Bird reflex game
+│   ├── dino_runner.c        # Chrome Dino Runner
+│   └── russian_roulette.c   # Russian Roulette simulation
 ├── .github/
 │   └── workflows/
 │       └── build.yml        # CI/CD pipeline
@@ -265,14 +284,15 @@ cli-games-pack/
 - **User-Friendly:** Clear menus and instructions
 
 <<<<<<< HEAD
-## 🚀 What's New in v1.8
+## 🚀 What's New in v1.9
 
-- **🏎️ F1 Reaction Start:** Professional Formula 1 starting lights simulation with 6 game modes
-- **👾 Space Invaders 1978:** Complete retro arcade experience with 6 game modes and enhanced effects
-- **🎮 Enhanced Gameplay:** Improved animations, sound effects, and visual feedback
-- **🔧 Bug Fixes:** Improved menu navigation and cross-platform compatibility
-- **📊 Statistics:** Advanced tracking for all games with personal bests
-- **🎨 Visual Improvements:** Better ASCII art and smoother animations
+- **� Russian Roulette:** Thrilling simulation game with single player survival and multiplayer modes
+- **🎨 Enhanced ASCII Art:** Improved cross-platform compatibility with standard ASCII characters
+- **🔧 CI/CD Improvements:** Fixed GitHub Actions pipeline for all platforms (Windows, macOS, Ubuntu)
+- **🎮 Better Gameplay:** Enhanced Chrome Dino Runner with improved physics and multiple obstacle types
+- **📊 Advanced Statistics:** Player performance tracking and scoring systems
+- **⚡ Performance Optimizations:** Faster animations and better input handling
+- **🛡️ Safety Features:** Educational disclaimers and responsible gaming messaging
 
 ## 🤝 Contributing
 
