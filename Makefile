@@ -2,7 +2,14 @@
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -O2
-TARGET = cli-games
+
+# Detect OS and set appropriate executable extension
+ifeq ($(OS),Windows_NT)
+    TARGET = cli-games.exe
+else
+    TARGET = cli-games
+endif
+
 SRCDIR = games
 SOURCES = main.c $(SRCDIR)/rock_paper_scissors.c $(SRCDIR)/guess_number.c $(SRCDIR)/tic_tac_toe.c $(SRCDIR)/hangman.c $(SRCDIR)/word_scramble.c $(SRCDIR)/coin_flip.c $(SRCDIR)/blackjack.c $(SRCDIR)/bulls_and_cows.c $(SRCDIR)/ascii_racing.c $(SRCDIR)/2048.c $(SRCDIR)/snake.c $(SRCDIR)/slot_machine.c $(SRCDIR)/minesweeper.c $(SRCDIR)/f1_reaction.c $(SRCDIR)/space_invaders.c $(SRCDIR)/simon_says.c $(SRCDIR)/flappy_bird.c $(SRCDIR)/dino_runner.c $(SRCDIR)/russian_roulette.c $(SRCDIR)/sliding_puzzle.c
 OBJECTS = $(SOURCES:.c=.o)
@@ -24,7 +31,7 @@ $(TARGET): $(OBJECTS)
 # Clean build files
 clean:
 	@echo "🧹 Cleaning build files..."
-	rm -f $(OBJECTS) $(TARGET)
+	-rm -f $(OBJECTS) $(TARGET) *.exe
 	@echo "✅ Clean complete!"
 
 # Install (copy to system directory - Unix/Linux/macOS)
