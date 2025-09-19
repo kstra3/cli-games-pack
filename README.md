@@ -1,6 +1,6 @@
-# 🎮 CLI Games Pack v1.9
+# 🎮 CLI Games Pack v2.0
 
-A comprehensive collection of 19 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, Simon Says, Flappy Bird, Chrome Dino Runner, and the thrilling Russian Roulette!
+A comprehensive collection of 20 classic command-line games written in C, featuring Rock-Paper-Scissors, Guess the Number, Tic Tac Toe, Hangman, Word Scramble, Coin Flip, Blackjack, Bulls & Cows (Mastermind), ASCII Racing Game, 2048, Snake, Slot Machine, Minesweeper, F1 Reaction Start, Space Invaders, Simon Says, Flappy Bird, Chrome Dino Runner, Russian Roulette, and the challenging 15-Puzzle!
 
 ![C](https://img.shields.io/badge/language-C-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -157,6 +157,17 @@ A comprehensive collection of 19 classic command-line games written in C, featur
 - Suspenseful sound effects and timing animations
 - Cross-platform compatible ASCII graphics
 
+### 20. 🧩 15-Puzzle (Sliding Puzzle)
+- Classic sliding puzzle with numbered tiles (1-15)
+- 3 difficulty levels: Easy (50 shuffles), Medium (100), Hard (200)
+- Intelligent solvability checking ensures all puzzles are winnable
+- WASD movement controls for intuitive tile sliding
+- Move counter tracking and performance statistics
+- Interactive instructions and solution demonstration mode
+- Clean ASCII board display with cross-platform compatibility
+- Win detection with congratulations and move count display
+- Strategic gameplay requiring logical thinking and planning
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -224,7 +235,8 @@ gcc -o cli-games main.c games/*.c -std=c99 -Wall
 | 17. Flappy Bird                          |
 | 18. Chrome Dino Runner                   |
 | 19. Russian Roulette                     |
-| 20. Exit                                 |
+| 20. 15-Puzzle (Sliding Puzzle)           |
+| 21. Exit                                 |
 |                                          |
 +==========================================+
 ```
@@ -254,7 +266,8 @@ cli-games-pack/
 │   ├── simon_says.c         # Simon Says memory game
 │   ├── flappy_bird.c        # Flappy Bird reflex game
 │   ├── dino_runner.c        # Chrome Dino Runner
-│   └── russian_roulette.c   # Russian Roulette simulation
+│   ├── russian_roulette.c   # Russian Roulette simulation
+│   └── sliding_puzzle.c     # 15-Puzzle sliding puzzle
 ├── .github/
 │   └── workflows/
 │       └── build.yml        # CI/CD pipeline
@@ -283,16 +296,15 @@ cli-games-pack/
 - **Extensible:** Easy to add new games
 - **User-Friendly:** Clear menus and instructions
 
-<<<<<<< HEAD
-## 🚀 What's New in v1.9
+## 🚀 What's New in v2.0
 
-- **� Russian Roulette:** Thrilling simulation game with single player survival and multiplayer modes
-- **🎨 Enhanced ASCII Art:** Improved cross-platform compatibility with standard ASCII characters
-- **🔧 CI/CD Improvements:** Fixed GitHub Actions pipeline for all platforms (Windows, macOS, Ubuntu)
-- **🎮 Better Gameplay:** Enhanced Chrome Dino Runner with improved physics and multiple obstacle types
-- **📊 Advanced Statistics:** Player performance tracking and scoring systems
-- **⚡ Performance Optimizations:** Faster animations and better input handling
-- **🛡️ Safety Features:** Educational disclaimers and responsible gaming messaging
+- **🧩 15-Puzzle:** Brand new sliding puzzle game with multiple difficulty levels and solvability checking
+- **🎯 Strategic Gameplay:** Intelligent puzzle generation ensures all games are winnable 
+- **📊 Enhanced Statistics:** Move tracking and performance analysis for puzzle-solving
+- **🎨 ASCII Art Improvements:** Continued cross-platform compatibility enhancements
+- **🎮 20 Games Total:** Expanded from 19 to 20 complete games in the collection
+- **� Build System Updates:** Updated Makefile and CI/CD workflow for new game integration
+- **⚡ Optimized Algorithms:** Smart solvability checking and efficient tile movement mechanics
 
 ## 🤝 Contributing
 
