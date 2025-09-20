@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         
@@ -21,36 +22,39 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc make
+      shell: bash
         
     - name: Setup GCC (macOS)
       if: runner.os == 'macOS'
       run: |
-        # Verify compiler availability (macOS runners have Xcode tools pre-installed)
         which gcc || which clang
         gcc --version || clang --version
+      shell: bash
         
     - name: Setup MinGW (Windows)
       if: runner.os == 'Windows'
       run: |
         gcc --version
         make --version
-        Write-Host "✅ GCC and Make are available on Windows runner"
       shell: powershell
         
     - name: Build project
-      run: make
+      run: |
+        make clean
+        make
+      shell: bash
       
     - name: Verify build (Linux/macOS)
       if: runner.os != 'Windows'
       run: |
-        ls -la cli-games
+        ls -la cli-games || ls -la cli-games.exe
         echo "✅ Build verification successful on ${{ runner.os }}"
+      shell: bash
         
     - name: Verify build (Windows)
       if: runner.os == 'Windows'
       run: |
         if (Test-Path "cli-games.exe") {
-            Write-Host "✅ Build verification successful on Windows"
             Get-ChildItem -Name "cli-games.exe"
         } else {
             Write-Host "❌ Build failed - cli-games.exe not found"
