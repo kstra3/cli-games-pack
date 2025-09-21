@@ -15,65 +15,98 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
     
-    - name: Setup GCC (Linux)
+    - name: Setup build environment (Linux)
       if: runner.os == 'Linux'
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc make
-      shell: bash
-        
-    - name: Setup GCC (macOS)
-      if: runner.os == 'macOS'
-      run: |
-        which gcc || which clang
-        gcc --version || clang --version
-      shell: bash
-        
-    - name: Setup MinGW (Windows)
-      if: runner.os == 'Windows'
-      run: |
+        echo "Environment setup complete"
         gcc --version
         make --version
-      shell: powershell
+      shell: bash
         
-    - name: Build project
+    - name: Setup build environment (macOS)
+      if: runner.os == 'macOS'
       run: |
-        make clean
+        echo "macOS build environment"
+        gcc --version || clang --version
+        make --version
+      shell: bash
+        
+    - name: Setup build environment (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        echo "Windows build environment"
+        gcc --version
+        mingw32-make --version || make --version
+      shell: cmd
+      
+    - name: List directory contents
+      run: |
+        echo "Current directory contents:"
+        ls -la || dir
+      shell: bash
+        
+    - name: Clean previous builds
+      run: |
+        echo "Cleaning previous builds..."
+        make clean || echo "Clean failed or no previous build"
+      shell: bash
+      
+    - name: Build project (Unix-like)
+      if: runner.os != 'Windows'
+      run: |
+        echo "Building on ${{ runner.os }}..."
         make
       shell: bash
       
-    - name: Verify build (Linux/macOS)
-      if: runner.os != 'Windows'
+    - name: Build project (Windows)
+      if: runner.os == 'Windows'
       run: |
-        ls -la cli-games || ls -la cli-games.exe
-        echo "✅ Build verification successful on ${{ runner.os }}"
+        echo "Building on Windows..."
+        mingw32-make || make
+      shell: cmd
+      
+    - name: List build results
+      run: |
+        echo "Build results:"
+        ls -la cli-games* || dir cli-games* || echo "No executables found"
       shell: bash
         
-    - name: Verify build (Windows)
+    - name: Verify executable (Unix-like)
+      if: runner.os != 'Windows'
+      run: |
+        if [ -f "cli-games" ]; then
+          echo "✅ Success: cli-games executable found"
+          file cli-games
+        elif [ -f "cli-games.exe" ]; then
+          echo "✅ Success: cli-games.exe executable found"
+          file cli-games.exe
+        else
+          echo "❌ Error: No executable found"
+          exit 1
+        fi
+      shell: bash
+        
+    - name: Verify executable (Windows)
       if: runner.os == 'Windows'
       run: |
-        if (Test-Path "cli-games.exe") {
-            Get-ChildItem -Name "cli-games.exe"
-        } else {
-            Write-Host "❌ Build failed - cli-games.exe not found"
-            exit 1
-        }
-      shell: powershell
+        if exist "cli-games.exe" (
+          echo ✅ Success: cli-games.exe found
+          dir cli-games.exe
+        ) else (
+          echo ❌ Error: cli-games.exe not found
+          exit /b 1
+        )
+      shell: cmd
         
-    - name: Upload artifacts (Linux/macOS)
-      if: runner.os != 'Windows'
-      uses: actions/upload-artifact@v4
-      with:
-        name: cli-games-${{ matrix.os }}
-        path: cli-games
-        
-    - name: Upload artifacts (Windows)
-      if: runner.os == 'Windows'
+    - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: cli-games-${{ matrix.os }}
         path: |
-          cli-games.exe
-          play.bat
+          cli-games*
+          !*.o
