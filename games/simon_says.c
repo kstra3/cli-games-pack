@@ -21,13 +21,14 @@
 #include <time.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include "games.h"
 
 #ifdef _WIN32
     #include <windows.h>
     #include <conio.h>
     #define CLEAR_SCREEN() system("cls")
     #define SLEEP_MS(ms) Sleep(ms)
-    #define KBHIT() _kbhit()
+    #define SIMON_KBHIT() games_kbhit()
     #define GETCH() _getch()
 #else
     #include <unistd.h>
@@ -35,14 +36,7 @@
     #include <fcntl.h>
     #define CLEAR_SCREEN() system("clear")
     #define SLEEP_MS(ms) usleep((ms) * 1000)
-    int KBHIT() {
-        int ch = getchar();
-        if (ch != EOF) {
-            ungetc(ch, stdin);
-            return 1;
-        }
-        return 0;
-    }
+    #define SIMON_KBHIT() games_kbhit()
     #define GETCH() getchar()
 #endif
 

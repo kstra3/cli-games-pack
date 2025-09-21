@@ -22,13 +22,14 @@
 #include <time.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include "games.h"
 
 #ifdef _WIN32
     #include <windows.h>
     #include <conio.h>
     #define CLEAR_SCREEN() system("cls")
     #define SLEEP_MS(ms) Sleep(ms)
-    #define KBHIT() _kbhit()
+    #define FLAPPY_KBHIT() games_kbhit()
     #define GETCH() _getch()
 #else
     #include <unistd.h>
@@ -36,33 +37,7 @@
     #include <fcntl.h>
     #define CLEAR_SCREEN() system("clear")
     #define SLEEP_MS(ms) usleep((ms) * 1000)
-    
-    // Improved non-blocking input for Unix
-    int KBHIT() {
-        struct termios oldt, newt;
-        int ch;
-        int oldf;
-        
-        tcgetattr(STDIN_FILENO, &oldt);
-        newt = oldt;
-        newt.c_lflag &= ~(ICANON | ECHO);
-        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-        oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-        fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
-        
-        ch = getchar();
-        
-        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-        fcntl(STDIN_FILENO, F_SETFL, oldf);
-        
-        if(ch != EOF) {
-            ungetc(ch, stdin);
-            return 1;
-        }
-        
-        return 0;
-    }
-    
+    #define FLAPPY_KBHIT() games_kbhit()
     #define GETCH() getchar()
 #endif
 
@@ -481,7 +456,7 @@ void flappy_bird_game_loop(void) {
 
 // Handle Input
 void flappy_bird_handle_input(void) {
-    if (KBHIT()) {
+    if (FLAPPY_KBHIT()) {
         char key = GETCH();
         switch (key) {
             case ' ':  // Space - Flap

@@ -24,13 +24,14 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <math.h>
+#include "games.h"
 
 #ifdef _WIN32
     #include <windows.h>
     #include <conio.h>
     #define CLEAR_SCREEN() system("cls")
     #define SLEEP_MS(ms) Sleep(ms)
-    #define KBHIT() _kbhit()
+    #define DINO_KBHIT() games_kbhit()
     #define GETCH() _getch()
 #else
     #include <unistd.h>
@@ -38,14 +39,7 @@
     #include <fcntl.h>
     #define CLEAR_SCREEN() system("clear")
     #define SLEEP_MS(ms) usleep((ms) * 1000)
-    int KBHIT() {
-        int ch = getchar();
-        if (ch != EOF) {
-            ungetc(ch, stdin);
-            return 1;
-        }
-        return 0;
-    }
+    #define DINO_KBHIT() games_kbhit()
     #define GETCH() getchar()
 #endif
 
@@ -620,7 +614,7 @@ void dino_runner_handle_input(void) {
     bool duck_pressed = false;
     bool duck_released = false;
     
-    if (KBHIT()) {
+    if (DINO_KBHIT()) {
         int key = GETCH();
         
         switch (key) {

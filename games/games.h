@@ -7,6 +7,14 @@
 #include <string.h>
 #include <ctype.h>
 
+#ifdef _WIN32
+    #include <conio.h>
+#else
+    #include <termios.h>
+    #include <unistd.h>
+    #include <fcntl.h>
+#endif
+
 // Function prototypes for all games
 void play_rock_paper_scissors(void);
 void play_guess_number(void);
@@ -32,5 +40,6 @@ void play_sliding_puzzle(void);
 // Utility functions
 void clear_input_buffer(void);
 void pause_and_continue(void);
+int games_kbhit(void);  // Cross-platform keyboard hit detection
 
 #endif // GAMES_H
