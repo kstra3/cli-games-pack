@@ -2,7 +2,7 @@
 
 void display_menu(void) {
     printf("\n+==========================================+\n");
-    printf("|           CLI GAMES PACK v2.0            |\n");
+    printf("|           CLI GAMES PACK v2.1            |\n");
     printf("|         Welcome to Fun Gaming!           |\n");
     printf("+==========================================+\n");
     printf("|                                          |\n");
@@ -26,10 +26,11 @@ void display_menu(void) {
     printf("| 18. Chrome Dino Runner                   |\n");
     printf("| 19. Russian Roulette                     |\n");
     printf("| 20. 15-Puzzle (Sliding Puzzle)           |\n");
-    printf("| 21. Exit                                 |\n");
+    printf("| 21. Yahtzee (Dice Game)                  |\n");
+    printf("| 22. Exit                                 |\n");
     printf("|                                          |\n");
     printf("+==========================================+\n");
-    printf("\nPlease enter your choice (1-21): ");
+    printf("\nPlease enter your choice (1-22): ");
 }
 
 void clear_input_buffer(void) {
@@ -216,12 +217,18 @@ int main(void) {
                 break;
                 
             case 21:
+                printf("\n>>> Starting Yahtzee (Dice Game)...\n");
+                yahtzee_game();
+                pause_and_continue();
+                break;
+                
+            case 22:
                 printf("\n>>> Thanks for playing! Goodbye!\n");
                 running = 0;
                 break;
                 
             default:
-                printf("\nInvalid choice! Please select a number between 1-21.\n");
+                printf("\nInvalid choice! Please select a number between 1-22.\n");
                 pause_and_continue();
                 break;
         }

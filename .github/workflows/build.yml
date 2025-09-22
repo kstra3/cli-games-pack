@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build and Test CLI Games Pack v2.1
 
 on:
   push:
@@ -23,7 +23,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc make
-        echo "Environment setup complete"
+        echo "Environment setup complete for CLI Games Pack v2.1"
+        echo "Building 21 games including new Yahtzee game"
         gcc --version
         make --version
       shell: bash
@@ -31,7 +32,8 @@ jobs:
     - name: Setup build environment (macOS)
       if: runner.os == 'macOS'
       run: |
-        echo "macOS build environment"
+        echo "macOS build environment for CLI Games Pack v2.1"
+        echo "Building 21 games including new Yahtzee game"
         gcc --version || clang --version
         make --version
       shell: bash
@@ -39,7 +41,8 @@ jobs:
     - name: Setup build environment (Windows)
       if: runner.os == 'Windows'
       run: |
-        echo "Windows build environment"
+        echo "Windows build environment for CLI Games Pack v2.1"
+        echo "Building 21 games including new Yahtzee game"
         gcc --version
         mingw32-make --version || make --version
       shell: cmd
@@ -48,6 +51,12 @@ jobs:
       run: |
         echo "Current directory contents:"
         ls -la || dir
+        echo ""
+        echo "Games directory contents:"
+        ls -la games/ || dir games\
+        echo ""
+        echo "Confirming Yahtzee game is present:"
+        ls -la games/yahtzee.c || dir games\yahtzee.c || echo "❌ Yahtzee game file not found"
       shell: bash
         
     - name: Clean previous builds
@@ -59,21 +68,26 @@ jobs:
     - name: Build project (Unix-like)
       if: runner.os != 'Windows'
       run: |
-        echo "Building on ${{ runner.os }}..."
+        echo "Building CLI Games Pack v2.1 on ${{ runner.os }}..."
+        echo "Compiling 21 games including Yahtzee..."
         make
       shell: bash
       
     - name: Build project (Windows)
       if: runner.os == 'Windows'
       run: |
-        echo "Building on Windows..."
+        echo "Building CLI Games Pack v2.1 on Windows..."
+        echo "Compiling 21 games including Yahtzee..."
         mingw32-make || make
       shell: cmd
       
     - name: List build results
       run: |
-        echo "Build results:"
+        echo "Build results for CLI Games Pack v2.1:"
         ls -la cli-games* || dir cli-games* || echo "No executables found"
+        echo ""
+        echo "Confirming all object files were created:"
+        ls -la games/*.o || dir games\*.o || echo "No object files found"
       shell: bash
         
     - name: Verify executable (Unix-like)
@@ -81,10 +95,14 @@ jobs:
       run: |
         if [ -f "cli-games" ]; then
           echo "✅ Success: cli-games executable found"
+          echo "CLI Games Pack v2.1 with 21 games (including Yahtzee) built successfully!"
           file cli-games
+          ls -lh cli-games
         elif [ -f "cli-games.exe" ]; then
           echo "✅ Success: cli-games.exe executable found"
+          echo "CLI Games Pack v2.1 with 21 games (including Yahtzee) built successfully!"
           file cli-games.exe
+          ls -lh cli-games.exe
         else
           echo "❌ Error: No executable found"
           exit 1
@@ -96,6 +114,7 @@ jobs:
       run: |
         if exist "cli-games.exe" (
           echo ✅ Success: cli-games.exe found
+          echo CLI Games Pack v2.1 with 21 games including Yahtzee built successfully!
           dir cli-games.exe
         ) else (
           echo ❌ Error: cli-games.exe not found
@@ -106,7 +125,25 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: cli-games-${{ matrix.os }}
+        name: cli-games-pack-v2.1-${{ matrix.os }}
         path: |
           cli-games*
           !*.o
+        if-no-files-found: error
+      
+    - name: Build summary
+      run: |
+        echo "🎮 CLI Games Pack v2.1 Build Summary"
+        echo "=================================="
+        echo "✅ Total Games: 21"
+        echo "✅ New in v2.1: Yahtzee (Classic Dice Game)"
+        echo "✅ Platform: ${{ matrix.os }}"
+        echo "✅ Status: Build Successful"
+        echo ""
+        echo "Games included:"
+        echo "• Classic games: Rock Paper Scissors, Tic Tac Toe, Hangman"
+        echo "• Card games: Blackjack, Slot Machine"
+        echo "• Puzzle games: 2048, Minesweeper, 15-Puzzle"
+        echo "• Action games: Snake, Flappy Bird, Space Invaders"
+        echo "• NEW: Yahtzee with full scoring and strategy hints"
+      shell: bash
